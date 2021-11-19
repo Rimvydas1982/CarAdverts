@@ -1,0 +1,127 @@
+/* MOBILE FIRST */
+/* Mobile */
+/* -- main */
+/* my-account.html */
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+main h4 {
+  padding-top: 5px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userInfo {
+  width: 40%;
+  margin-top: 20px;
+  padding: 20px 50px;
+  text-align: center;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+
+.userInfo h3 {
+  padding: 7px 0;
+}
+
+.userInfo button {
+  margin-top: 15px;
+}
+
+.userCars {
+  margin-top: 50px;
+  width: 100%;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+
+.userCars table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.userCars table thead th {
+  background-color: var(--primary-color);
+  color: var(--text-light-color);
+  padding: 10px 0px;
+  border-bottom: 1px solid #ddd;
+}
+
+.userCars table tbody tr td {
+  padding: 10px 0;
+}
+
+main
+  .container
+  #user
+  #user__cars
+  #user__cars-list
+  table
+  tbody
+  tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.addNewCar {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 80%;
+}
+.addNewCar form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.addNewCar input {
+  padding: 5px 0;
+}
+
+.addNewCar button {
+  margin-top: 10px;
+  width: 40%;
+}
+
+.addNewCar p {
+  margin-top: 15px;
+  padding: 5px 10px;
+  border-radius: 3px 0px 0px 3px;
+  background-color: #f8f8f8;
+  border-left: 5px solid blue;
+}
+/* DTablet */
+@media screen and (min-width: 680px) {
+  .userCars {
+    margin: 30px auto;
+    max-width: 600px;
+  }
+  .addNewCar {
+    max-width: 50%;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  /* -- main */
+  /* my-account.html */
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .userInfo {
+    width: 25%;
+  }
+
+  .userCars {
+    max-width: 800px;
+  }
+}

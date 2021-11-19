@@ -1,0 +1,58 @@
+/* MOBILE FIRST */
+/* Mobile */
+/* -- main */
+/* login.html */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.headline {
+  margin: 40px 20px;
+  text-align: center;
+  font-size: 1.7em;
+}
+.loginSignupContainer {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.login {
+  padding: 30px;
+}
+
+.signup {
+  padding: 30px;
+  margin-top: 35px;
+}
+
+.container section h2 span {
+  font-weight: 400;
+}
+
+/* Tablet */
+@media screen and (min-width: 680px) {
+  .loginSignupContainer {
+    max-width: 600px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  /* -- main */
+  /* login.html */
+  .loginSignupContainer {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .login,
+  .signup {
+    width: calc(100% / 2 - 30px);
+  }
+
+  .signup {
+    margin-top: 0;
+  }
+}

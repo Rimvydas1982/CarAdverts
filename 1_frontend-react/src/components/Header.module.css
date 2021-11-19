@@ -1,0 +1,44 @@
+/* MOBILE FIRST */
+/* Mobile */
+/* -- header */
+.header {
+  background-color: var(--primary-color);
+}
+
+header .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container div {
+  color: var(--text-light-color);
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
+}
+
+.container nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.container nav ul li {
+  padding: 15px;
+}
+.container nav ul li a {
+  color: var(--text-light-color);
+  text-decoration: none;
+}
+
+.container nav ul li:hover {
+  background: white;
+}
+
+.container nav ul li:hover a {
+  color: var(--primary-color);
+}
