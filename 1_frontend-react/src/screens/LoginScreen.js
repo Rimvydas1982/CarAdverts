@@ -36,7 +36,7 @@ const LoginScreen = () => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:5000/api/users/login', {
+      .post('https://car-adverts-simulation.herokuapp.com/api/users/login', {
         email: loginEmail,
         password: loginPassword,
       })
@@ -72,7 +72,7 @@ const LoginScreen = () => {
       return;
     }
     axios
-      .post('http://localhost:5000/api/users/signup', {
+      .post('https://car-adverts-simulation.herokuapp.com/api/users/signup', {
         name: signupName,
         surname: signupSurname,
         email: signupEmail,

@@ -9,9 +9,11 @@ const HomeScreen = () => {
 
   //--Side effects
   useEffect(() => {
-    axios.get('http://localhost:5000/api/cars').then((response) => {
-      setCars(response.data);
-    });
+    axios
+      .get('https://car-adverts-simulation.herokuapp.com/api/cars')
+      .then((response) => {
+        setCars(response.data);
+      });
   }, []);
 
   return (

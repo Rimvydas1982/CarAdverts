@@ -7,10 +7,12 @@ import style from './MyAccountScreen.module.css';
 
 const MyAccountScreen = () => {
   //API
-  const host = 'http://localhost:5000';
-  const GET_USER_URI = `${host}/api/users/`;
-  const DELETE_CAR_URI = `${host}/api/cars/delete/`;
-  const ADD_CAR_URI = `${host}/api/cars/add/`;
+  const GET_USER_URI =
+    'https://car-adverts-simulation.herokuapp.com/api/users/';
+  const DELETE_CAR_URI =
+    'https://car-adverts-simulation.herokuapp.com/api/cars/delete/';
+  const ADD_CAR_URI =
+    'https://car-adverts-simulation.herokuapp.com/api/cars/add/';
 
   //Hooks
   //--global
