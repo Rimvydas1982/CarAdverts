@@ -34,7 +34,7 @@ mongoose
 // Routes
 app.get('/', (req, res) => res.send('API is running...'));
 
-// GET: all cars
+// all cars
 app.get('/api/cars', async (req, res) => {
   let users = await User.find({});
   let cars = await Car.find({});
@@ -50,7 +50,7 @@ app.get('/api/cars', async (req, res) => {
   res.json(usersAndCars);
 });
 
-// GET: get single user based on id
+// get single user based on id
 app.get('/api/users/:id', async (req, res) => {
   let userId = req.params.id;
 
@@ -60,7 +60,7 @@ app.get('/api/users/:id', async (req, res) => {
   res.json({ ...user.toObject(), cars: [...cars] });
 });
 
-// POST: register new user
+// register new user
 app.post('/api/users/signup', (req, res) => {
   let user = req.body;
 
@@ -90,7 +90,7 @@ app.post('/api/users/signup', (req, res) => {
   });
 });
 
-// POST: Log in existing user
+//Log in existing user
 app.post('/api/users/login', (req, res) => {
   let user = req.body;
 
@@ -116,25 +116,7 @@ app.post('/api/users/login', (req, res) => {
   });
 });
 
-// PUT: Delete single car based on it's id (use this route for embeded DB with single collection)
-app.put('/api/cars/delete/:id', async (req, res) => {
-  let { userId, carId } = req.body;
-
-  let userFromDB = await UserAndCars.findById(userId);
-
-  let carToDeleteIndex = userFromDB.cars.findIndex(
-    (car) => '' + car._id === '' + carId
-  );
-
-  // updating user data from DB  by removing car
-  userFromDB.cars.splice(carToDeleteIndex, 1);
-
-  UserAndCars.findByIdAndUpdate(userId, userFromDB).then((result) =>
-    res.json(userFromDB)
-  );
-});
-
-// PUT: Add single car to user based on his id
+// Add single car to user based on his id
 app.put('/api/cars/add/:id', async (req, res) => {
   let userId = req.params.id;
   let carInfo = req.body;
@@ -151,7 +133,7 @@ app.put('/api/cars/add/:id', async (req, res) => {
   res.json({ ...user.toObject(), cars: [...cars] });
 });
 
-// DELETE: Delete single car based on it's id (for listed DB with multiple collections)
+//Delete single car based on it's id
 app.delete('/api/cars/delete/:id', async (req, res) => {
   const carId = req.params.id;
 
@@ -162,19 +144,3 @@ app.delete('/api/cars/delete/:id', async (req, res) => {
 
   res.json({ ...user.toObject(), cars: [...cars] });
 });
-
-// --------------------------------------------------------------------
-// REST API
-/*
-GET:     /api/cars              | Get all cars
-         /api/users/:id         | Get single user based on id
-
-POST:    /api/users/signup      | Register new user
-         /api/users/login       | Log in existing user
-
-PUT:     /api/cars/delete/:id   | Delete single car based on it's id (for embeded DB with one collention)
-         /api/cars/add/:id      | Add single car to user based on his id
-
-DELETE:  /api/cars/delete/:id   | Delete single car based on it's id (for listed DB with multiple collections)
-*/
-//---------------------------------------------------------------------
